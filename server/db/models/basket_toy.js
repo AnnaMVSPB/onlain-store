@@ -5,9 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Basket_toy extends Model {
    
-    static associate({Toy,Basket}) {
-      this.belongsToMany(Toy, { foreignKey: 'toy_id' });
-      this.belongsTo(Basket, { foreignKey: 'basket_id' });
+    static associate() {
+
     }
   }
   Basket_toy.init({
