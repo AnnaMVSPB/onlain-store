@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(Toy, { foreignKey: 'toys_id_info' });
     }
   }
-  Toys_info.init({
+  Toy_info.init({
     toy_id_info: DataTypes.INTEGER,
     title: DataTypes.TEXT,
     description: DataTypes.TEXT
