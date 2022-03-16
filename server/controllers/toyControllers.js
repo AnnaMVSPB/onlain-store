@@ -4,13 +4,6 @@ const { Type,Toy} = require('../db/models');
 
 
 const addToy = async (req,res)=>{
-  const { files } = req;
-  const {name,price,type,info, img}= req.body;
- 
-  // let newName = name[0].toUpperCase() + name.slice(1);
-
-  
-  res.status(201).json(files);
   
   // try {
   //   const existingName = await Toy.findOne({ where: { name:newName } });
