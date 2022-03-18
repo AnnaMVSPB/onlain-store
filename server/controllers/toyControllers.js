@@ -1,10 +1,17 @@
 
 const path = require('path');
-const { Type,Toy} = require('../db/models');
+const { Type, Toy } = require('../db/models');
 
+const initToys = async (req, res) => {
+  const toys = await Toy.findAll({
+    include: {
+      model: Type,
+    },
+  })
+  res.status(201).json({ toys});
+}
+const addToy = async (req, res) => {
 
-const addToy = async (req,res)=>{
-  
   // try {
   //   const existingName = await Toy.findOne({ where: { name:newName } });
   //   if (existingName) {
@@ -23,4 +30,4 @@ const addToy = async (req,res)=>{
   //   res.status(500).json({ err, message: 'Ошибка занесения данных' });
   // }
 }
-module.exports = {addToy};
+module.exports = { addToy, initToys };
