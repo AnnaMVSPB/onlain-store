@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button,Card } from 'react-bootstrap';
 import style from './Card.module.css';
 
 function CardToy({toy}) {
@@ -8,14 +7,19 @@ function CardToy({toy}) {
 
   return (
 
-<Card className={style.card}>
-  <Card.Img variant="top" src={path}  className={style.img}/>
-  <Card.Body className={style.body}>
-    <Card.Title>{toy.name}</Card.Title>
-   <Card.Title>{`${toy.price} р`}</Card.Title>
-    <Button variant="primary">В корзину</Button>
-  </Card.Body>
-</Card>
+    <div class="col s12 m6 l3">
+      <div class="card">
+        <div className={style.width} >
+          <img src={path} className="materialboxed" width="300" hide="300"/>
+        </div>
+        <a class="btn-floating btn-large  waves-effect waves-light red right"><i class="material-icons">add</i></a>
+        <div class="card-content">
+          <p> {toy.name}</p>
+          <p>{`${toy.price} р`}</p>
+        </div>
+      </div>
+    </div>
+ 
      
   );
 }
