@@ -1,11 +1,5 @@
 
-.card{
-  width: 18rem;
-  margin: 15px 15px 15px 0;
+.width{
+height: 28rem;
 }
-.body{
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-align: center;
-}
+

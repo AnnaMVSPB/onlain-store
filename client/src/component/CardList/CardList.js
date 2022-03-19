@@ -7,7 +7,7 @@ function CardList() {
   const {allToys} = useSelector(state => state.toyReducer)
   console.log(allToys)
   return (
-    <div className={style.cardList}>
+    <div class="row">
       {allToys.map((toy)=><CardToy  key = {toy.id} toy={toy}/>)}
     </div>
   );
