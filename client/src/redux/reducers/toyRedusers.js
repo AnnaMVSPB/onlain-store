@@ -11,7 +11,11 @@ export const toyReducer = (state = initialState, action) => {
           return {
         ...state,allToys:action.payload.toys
       };
-
+case toyAT.SEARCH_TOYS:
+  console.log(action.payload)
+  return {
+    ...state
+  }
     default:
       return state;
   }

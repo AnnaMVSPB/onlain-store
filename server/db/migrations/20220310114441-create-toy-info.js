@@ -12,9 +12,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         references:{model:'Toys',key:'id'}
       },
-      title: {
-        type: Sequelize.TEXT
-      },
       description: {
         type: Sequelize.TEXT
       },
