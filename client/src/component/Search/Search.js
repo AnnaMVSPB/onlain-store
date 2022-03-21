@@ -7,7 +7,7 @@ function Search() {
   const dispath = useDispatch()
   return (
     <nav>
-    <div className="nav-wrapper">
+    <div className="nav-wrapper light-blue darken-4">
       <form>
         <div className="input-field">
           <input id="search" type="search" required onChange={(e)=>dispath({type:toyAT.SEARCH_TOYS,payload:e.target.value})}/>

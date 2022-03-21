@@ -1,14 +1,23 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React,{ useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import CardToy from '../Card/Card'
+import { toyAT } from '../../redux/actionTypes/toyAT';
+
 // import style from './CardList.module.css';
 
 function CardList() {
-  const {allToys} = useSelector(state => state.toyReducer)
+  const {filterToys} = useSelector(state => state.toyReducer)
+  const {id}=useParams()
+  const dispath= useDispatch()
+  useEffect(()=>{
+    dispath({type:toyAT.FILTER_TYPE ,payload:id})
+  },[id])
   
+
   return (
     <div className="row">
-      {allToys.map((toy)=><CardToy  key = {toy.id} toy={toy}/>)}
+      {filterToys.map((toy)=><CardToy  key = {toy.id} toy={toy}/>)}
     </div>
   );
 }
