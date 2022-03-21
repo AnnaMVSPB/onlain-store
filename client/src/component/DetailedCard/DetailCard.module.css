@@ -1,0 +1,15 @@
+.detailCard{
+  display:flex;
+  justify-content: space-around;
+}
+.removeAdd{
+  display: flex;
+  justify-content: space-evenly;
+  text-align:start
+}
+.bloc2{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
