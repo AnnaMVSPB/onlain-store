@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Search from '../Search/Search';
 
 import style from './nav.module.css';
@@ -9,21 +9,21 @@ function Nav() {
     <> 
 
   <nav>
-    <div className="nav-wrapper">
-      <a href="/" className="brand-logo">Logo</a>
+    <div className="nav-wrapper light-blue darken-4">
+      <Link to="/" className="brand-logo">Logo</Link>
       <ul className="right hide-on-med-and-down">
      <li><Search/></li> 
-        <li><a href="/login"><i classNameName="right hide-on-med-and-down">Войти</i></a></li>
-        <li><a href="/cart"><i classNameName="right hide-on-med-and-down">Корзина</i></a></li>
+        <li><Link to="/login"><i classNameName="right hide-on-med-and-down">Войти</i></Link></li>
+        <li><Link to="/cart"><i classNameName="right hide-on-med-and-down">Корзина</i></Link></li>
       </ul>
     </div>
   </nav>
   <nav>
-    <div className="nav-wrapper">
+    <div className="nav-wrapper light-blue darken-4">
       <ul className={style.nav}>
-        <li><a href="/categori/1"><i  >Мягкие игрушки</i></a></li>
-        <li><a href="/categori/2"><i >Куклы</i></a></li>
-        <li><a href="/categori/3"><i >Машинки</i></a></li>
+        <li><Link to="/categori/1"><i>Мягкие игрушки</i></Link></li>
+        <li><Link to="/categori/2"><i>Куклы</i></Link></li>
+        <li><Link to="/categori/3"><i>Машинки</i></Link></li>
         </ul>
          </div>
   </nav>

@@ -9,18 +9,19 @@ function CardToy({toy}) {
 
   return (
 
-    <div className="col s12 m6 l3">
-      <div className="card">
+    <div className="col s12 m6 l3 ">
+      <div className="card z-depth-5">
         <div className={style.width} onClick={()=>navigation(`/detailCard/${toy.id}`)}>
           <img src={path} className="materialboxed" width="300" hide="300" />
         </div>
-        <a className="btn-floating btn-large  waves-effect waves-light red right"><i className="material-icons">add</i></a>
-        <div className="card-content">
+        <a className="btn-floating btn-large  waves-effect waves-light light-blue darken-1 right"><i className="material-icons">add</i></a>
+        <div className="card-content  light-blue lighten-3">
           <p> {toy.name}</p>
           <p>{`${toy.price} р`}</p>
         </div>
       </div>
     </div>
+  
  
      
   );
