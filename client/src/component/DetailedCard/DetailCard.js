@@ -18,7 +18,7 @@ function DetailCard() {
        <img class="materialboxed" width="650" src={path}/>
        <div className={style.bloc2}>
        <h2 class="card-title">{toy[0].name}</h2>
-         <RatingResult/>
+         <RatingResult rating={toy[0].rating}/>
 <div className={style.removeAdd}>
 <a class=" waves-effect waves-light btn-small"><i class="material-icons">remove</i></a>
 <p>2</p>

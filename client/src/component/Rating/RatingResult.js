@@ -1,15 +1,18 @@
 import React from 'react';
-import style from './Rating.module.css'
+import './Rating.css'
 
-function RatingResult(props) {
+function RatingResult({rating}) {
+  const arr = [1,2,3,4,5]
   return (
-    <div className={style.ratingResult}>
-	<span className="active"></span>	
-	<span className="active"></span>    
-	<span className="active"></span>  
-	<span></span>    
-	<span></span>
-  <p> 0 отзывов</p>
+    <div className="ratingResult">
+      {arr.map((el,i)=>{
+        if(i  < rating){
+          console.log(i)
+          return 	<span className="active"></span>
+        }else{
+          return <span></span>
+        }
+      })}
 </div>
   );
 }
