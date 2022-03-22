@@ -10,12 +10,14 @@ function DetailCard() {
   
    const toy = allToys.filter(toy=>toy.id === +id)
    const path = `http://localhost:7000/${toy[0].img}`
+   console.log(toy)
   return (
     <>
-    <span class="card-title">{toy[0].name}</span>
+    
     <div className={style.detailCard}>
        <img class="materialboxed" width="650" src={path}/>
        <div className={style.bloc2}>
+       <h2 class="card-title">{toy[0].name}</h2>
          <RatingResult/>
 <div className={style.removeAdd}>
 <a class=" waves-effect waves-light btn-small"><i class="material-icons">remove</i></a>
@@ -28,7 +30,7 @@ function DetailCard() {
        </div>
     </div>
     <div>
-      <p></p>
+      <p>{toy[0].Toy_info.description}</p>
     </div>
     </>
   );

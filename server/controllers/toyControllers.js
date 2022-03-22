@@ -1,11 +1,11 @@
 
 const path = require('path');
-const { Type, Toy } = require('../db/models');
+const { Type, Toy,Toy_info } = require('../db/models');
 
 const initToys = async (req, res) => {
   const toys = await Toy.findAll({
     include: {
-      model: Type,
+      model: Toy_info,
     },
   })
   res.status(201).json({ toys});

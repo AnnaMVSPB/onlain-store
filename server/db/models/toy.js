@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({Type,Basket_toy,Rating,Toy_info,Basket}) {
       this.belongsTo(Type, { foreignKey: 'type_id' });
       this.hasMany(Rating, { foreignKey: 'toy_id_rating' });
-      this.hasOne(Toy_info, { foreignKey: 'toys_id_info' });
+      this.hasOne(Toy_info, { foreignKey: 'toy_id_info' });
       this.belongsToMany(Basket, { through: Basket_toy, foreignKey: 'toy_id', otherKey: 'basket_id' });
     }
   }

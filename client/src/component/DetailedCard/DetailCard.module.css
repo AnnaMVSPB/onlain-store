@@ -1,6 +1,7 @@
 .detailCard{
   display:flex;
   justify-content: space-around;
+  height: 600px;
 }
 .removeAdd{
   display: flex;
