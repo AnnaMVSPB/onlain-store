@@ -1,6 +1,7 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
-
+import {userAT} from '../redux/actionTypes/userAT'
 import {toyAT} from '../redux/actionTypes/toyAT'
+
 
  const HOST = 'http://localhost:7000';
  async function fetchJson(path, options = {}) {
@@ -27,9 +28,41 @@ function* initToy() {
   }
 }
 
+function* addUser(action) {
+  try {
+    const response = yield call(fetchJson, '/api/user/reg', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(action.payload),
+    });
+  
+  yield put({type:userAT.ADD_USER ,payload:response});
+ 
+  } catch (e) {
+    yield put(('Connection error'));
+  }
+}
+
+function* logUser(action) {
+  try {
+    const response = yield call(fetchJson, '/api/user/log', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(action.payload),
+    });
+  
+  yield put({type:userAT.LOG_USER ,payload:response});
+ 
+  } catch (e) {
+    yield put(('Connection error'));
+  }
+}
+
 
 export function* myWatcher() {
   yield takeEvery(toyAT.INIT_TOY_SAGA, initToy);
+  yield takeEvery(userAT.ADD_USER_SAGA,addUser);
+  yield takeEvery(userAT.LOG_USER_SAGA,logUser);
 
 }
 

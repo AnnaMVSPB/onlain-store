@@ -1,3 +1,6 @@
 export const userAT = {
-  
+  ADD_USER_SAGA:'ADD_USER_SAGA', 
+  ADD_USER:'ADD_USER',
+  LOG_USER_SAGA:'LOG_USER_SAGA',
+  LOG_USER:'LOG_USER',
 }

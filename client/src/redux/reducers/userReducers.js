@@ -1,22 +1,26 @@
-import { } from '../actionTypes/userAT';
+import { userAT } from '../actionTypes/userAT';
 
 const initialState = {
-  login: false,
   message: '', // Для отображения ошибок логин, рега
-  userId: '',
+  user: {}
 };
 
 export const userReducer = (state = initialState, action) => {
 
   switch (action.type) {
-    // case userAT.NEW_USER:
-    //   return {
-    //     ...state,
-    //     login: action.payload.login,
-    //     message: '',
-    //     userId: action.payload.userId,
-    //   };
+    case userAT.ADD_USER:
+      console.log(action.payload)
+      localStorage.setItem('user', action.payload.email)
+      return {
+        ...state, user: action.payload
+      };
 
+    case userAT.LOG_USER:
+      console.log(action.payload)
+      localStorage.setItem('user', action.payload.email)
+      return {
+        ...state, user: action.payload
+      };
     default:
       return state;
   }

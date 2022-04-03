@@ -10,6 +10,7 @@ import {toyAT} from '../../redux/actionTypes/toyAT'
 
 import './App.css';
 import DetailCard from "../DetailedCard/DetailCard";
+import Registration from "../Registration/Registration";
 
 function App() {
   const dispath = useDispatch()
@@ -24,6 +25,7 @@ dispath({type:toyAT.INIT_TOY_SAGA})
       <Routes>
         
       <Route path="/" element={<CardList/>}/>
+      <Route path="/registration" element={<Registration/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="/categori/:id" element={<CardList/>}/>
