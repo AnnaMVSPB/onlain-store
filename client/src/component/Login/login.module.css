@@ -1,0 +1,17 @@
+.form{
+  width: 500px;
+  height: 400px;
+  border: solid 2px #40E0D0;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px #AFEEEE;
+  padding:20px;
+  margin: 40px;
+ 
+}
+.flex{
+  height: 800px;
+  display: flex;
+}
+.margin{
+  margin:20px;
+}

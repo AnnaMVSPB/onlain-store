@@ -13,8 +13,8 @@ function Nav() {
       <Link to="/" className="brand-logo">Logo</Link>
       <ul className="right hide-on-med-and-down">
      <li><Search/></li> 
-        <li><Link to="/login"><i classNameName="right hide-on-med-and-down">Войти</i></Link></li>
-        <li><Link to="/cart"><i classNameName="right hide-on-med-and-down">Корзина</i></Link></li>
+        <li><Link to="/login"><i className="right hide-on-med-and-down">Войти</i></Link></li>
+        <li><Link to="/cart"><i className="right hide-on-med-and-down">Корзина</i></Link></li>
       </ul>
     </div>
   </nav>
