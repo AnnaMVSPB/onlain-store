@@ -1,7 +1,7 @@
 import React,{ useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import CardToy from '../Card/Card'
+import CardToy from '../CardToy/CardToy'
 import { toyAT } from '../../redux/actionTypes/toyAT';
 
 // import style from './CardList.module.css';
@@ -16,9 +16,11 @@ function CardList() {
   
 
   return (
+    <>
     <div className="row">
       {filterToys.map((toy)=><CardToy  key = {toy.id} toy={toy}/>)}
     </div>
+    </>
   );
 }
 
