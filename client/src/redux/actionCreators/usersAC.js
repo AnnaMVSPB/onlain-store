@@ -13,3 +13,9 @@ export const loginUserAC = (payload) => {
     payload,
   };
 };
+
+export const logoutUserAC = () => {
+  return {
+    type: userAT.LOGOUT_USER,
+  };
+};
