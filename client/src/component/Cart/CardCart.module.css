@@ -1,0 +1,12 @@
+.card{
+  display:flex;
+  padding-top: 20px;
+margin-left: 50px;
+border-style: none none groove none;
+border-width:1px;
+}
+.card_content{
+  width: 50vw;
+  display:flex;
+  justify-content: space-around
+}
