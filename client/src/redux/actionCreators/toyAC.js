@@ -12,3 +12,10 @@ export const addPurchaseAC = (payload) => {
      payload
    }
  }
+
+ export const deletePurchaseAC = (payload) => {
+  return {
+    type: toyAT.DELETE_PURCHASE,
+    payload
+  }
+}

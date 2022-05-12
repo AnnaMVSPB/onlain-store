@@ -56,6 +56,8 @@ export const toyReducer = (state = initialState, action) => {
       let copyCartFilter=newCart.filter(obj=> obj.amount >= 1 )
       return { ...state, cart: copyCartFilter }
 
+      case toyAT.DELETE_PURCHASE:
+        return { ...state, cart:state.cart.filter(obj=> obj.id !== action.payload)}
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addPurchaseAC, subtractPurchaseAC } from '../../redux/actionCreators/toyAC';
+import { addPurchaseAC, deletePurchaseAC, subtractPurchaseAC } from '../../redux/actionCreators/toyAC';
 import style from './CardCart.module.css'
 
 function CardCart({ toy }) {
@@ -16,11 +16,14 @@ const dispath = useDispatch()
         <label for="first_name"> цена за 1 ед. товара </label>
          <p>{`${toy.price} р`}</p>
         </div>
+        <div className={style.boxButton}>
         <div className={style.sizeButton}>
         <div  className={style.button} onClick={()=>dispath(subtractPurchaseAC(toy))}><i class="material-icons prefix">chevron_left</i></div>
         <div>{toy.amount}</div>
         <div className={style.button} onClick={() => dispath(addPurchaseAC(toy))}><i class="material-icons prefix">chevron_right</i></div>
-        </div>
+        </div>  
+      </div>
+      <div onClick={()=>dispath(deletePurchaseAC(toy.id))}><i className="material-icons right">highlight_off</i></div>
       </div>
     </div>
   );
