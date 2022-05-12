@@ -46,15 +46,15 @@ export const toyReducer = (state = initialState, action) => {
     }
       case toyAT.SUBSTITUTE_PURCHASE : 
       let copyCart = [...state.cart]
-      let copyCartFilter=copyCart.filter(obj=> obj.amount > 1 )
-      let newCart = copyCartFilter.map(obj =>{
+      let newCart = copyCart.map(obj =>{
         if( obj.id === action.payload.id){
-          return { ...obj, amount: obj.amount - 1 } 
-        }else{
+            return { ...obj, amount: obj.amount - 1 } 
+         }else{
           return obj
         }
       })
-      return { ...state, cart: newCart }
+      let copyCartFilter=newCart.filter(obj=> obj.amount >= 1 )
+      return { ...state, cart: copyCartFilter }
 
     default:
       return state;
