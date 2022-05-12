@@ -13,17 +13,17 @@ const dispath = useDispatch()
       <div className={style.card_content}>
         <p className={style.sizeP}>{toy.name}</p>
         <div className={style.sizeP}>
-        <label for="first_name"> цена за 1 ед. товара </label>
+        <label htmlFor="first_name"> цена за 1 ед. товара </label>
          <p>{`${toy.price} р`}</p>
         </div>
         <div className={style.boxButton}>
         <div className={style.sizeButton}>
-        <div  className={style.button} onClick={()=>dispath(subtractPurchaseAC(toy))}><i class="material-icons prefix">chevron_left</i></div>
+        <div  className={style.button} onClick={()=>dispath(subtractPurchaseAC(toy))}><i className="material-icons prefix">chevron_left</i></div>
         <div>{toy.amount}</div>
-        <div className={style.button} onClick={() => dispath(addPurchaseAC(toy))}><i class="material-icons prefix">chevron_right</i></div>
+        <div className={style.button} onClick={() => dispath(addPurchaseAC(toy))}><i className="material-icons prefix">chevron_right</i></div>
         </div>  
       </div>
-      <div onClick={()=>dispath(deletePurchaseAC(toy.id))}><i className="material-icons right">highlight_off</i></div>
+      <div onClick={()=>dispath(deletePurchaseAC(toy))}><i className="material-icons right">highlight_off</i></div>
       </div>
     </div>
   );

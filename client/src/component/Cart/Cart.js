@@ -1,17 +1,34 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CardCart from './CardCart';
+import style from './CardCart.module.css'
 
 function Cart() {
-  const { cart } = useSelector(state => state.toyReducer)
+  const { cart, totalCost, total } = useSelector(state => state.cartReducer)
+  const { user } = useSelector(state => state.userReducer)
+  const navigation = useNavigate()
+
+  const checkout = () => {
+    if (Object.keys(user).length) {
+      console.log('asdfghjk')
+    } else {
+      navigation('/login')
+    }
+  }
   return (
-    <div>
+    <div className={style.cart}>
       <div>
         {cart.length > 0 ? cart.map(toy => <CardCart key={toy.id} toy={toy} />)
           : <><p>Пока Ваша корзина пуста,</p><Link to="/">Вы можете вернуться к выбору товаров</Link></>
         }
       </div>
+      {cart.length > 0 && <div>
+        <div><p>Общее кол-во товаров:</p>{total[0]}</div>
+        <div><p>Общая стоимость покупки составляет:</p>{totalCost[0]}</div>
+        <button onClick={checkout} className="btn waves-effect waves-light" type="submit" name="action">Оформить заказ</button>
+      </div>}
+
     </div>
   );
 }
