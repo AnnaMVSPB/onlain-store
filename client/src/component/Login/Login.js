@@ -23,12 +23,12 @@ function Login() {
                   <div className={style.form}>
                     <div className={style.margin} >
                       <i className="material-icons prefix">email</i>
-                      <label for="icon_prefix">Email</label>
+                      <label htmlFor="icon_prefix">Email</label>
                       <input ref={emailInput} id="email" type="email" className="validate" />
                     </div>
                     <div className={style.margin}>
                       <i className="material-icons prefix">https</i>
-                      <label for="icon_telephone">Password</label>
+                      <label htmlFor="icon_telephone">Password</label>
                       <input ref={passwordInput} id="password" type="password" className="validate" />
                     </div>
                     <button className="btn waves-effect waves-light" type="submit" name="action">Войти

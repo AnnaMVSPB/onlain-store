@@ -14,7 +14,7 @@ export const userReducer = (state = initialState, action) => {
         ...state, user: action.payload
       };
 
-    case userAT.LOG_USER:
+    case userAT.LOG_USER: 
       localStorage.setItem('user', action.payload.email)
       return {
         ...state, user: action.payload
