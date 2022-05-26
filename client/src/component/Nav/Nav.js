@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { logoutUserAC } from '../../redux/actionCreators/usersAC';
 import Search from '../Search/Search';
 
 import style from './nav.module.css';
@@ -9,8 +10,10 @@ function Nav() {
   const { user } = useSelector(state => state.userReducer)
   const [userLS, setUserLS] = useState('')
   const navigation=useNavigate()
+
   useEffect(() => {
-    setUserLS(localStorage.getItem('user'));
+    let id=localStorage.getItem('user')
+    setUserLS(id);
     navigation('/')
   }, [user])
 

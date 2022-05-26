@@ -1,6 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { addCartSagasAC } from '../../redux/actionCreators/cartAC';
 import CardCart from './CardCart';
 import style from './CardCart.module.css'
 
@@ -8,10 +9,14 @@ function Cart() {
   const { cart, totalCost, total } = useSelector(state => state.cartReducer)
   const { user } = useSelector(state => state.userReducer)
   const navigation = useNavigate()
+  const dispatch = useDispatch()
 
   const checkout = () => {
     if (Object.keys(user).length) {
-      console.log('asdfghjk')
+      const data = { cart, totalCost, user }
+      console.log(data)
+      dispatch(addCartSagasAC(data))
+     
     } else {
       navigation('/login')
     }
