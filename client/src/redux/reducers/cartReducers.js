@@ -12,8 +12,9 @@ export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case cartAT.CART_MESAGE:
-      console.log(action.payload)
-      return {...state, }
+     alert(`${action.payload.message}`)
+      return {...state, message:action.payload.message}
+
     case cartAT.ADD_PURCHASE: {
 
       let copyCart = [...state.cart]

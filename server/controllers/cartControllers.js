@@ -7,7 +7,7 @@ const addCart = async (reg, res) => {
   const basketToyCreate = cart.map(el => {
    Basket_toy.create({ toy_id: el.id, basket_id: basketCreate.id, quantity_of_goods:el.amount})
   })
-  res.status(201).json({t:'t'});
+  res.status(201).json({message:'Ваш заказ получен в обработку'});
 
 }
 const initOrders = async (reg, res) => {
