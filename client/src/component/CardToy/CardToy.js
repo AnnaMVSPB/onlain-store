@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux"
 import style from './Card.module.css';
-import { addPurchaseAC } from '../../redux/actionCreators/toyAC';
+import { addPurchaseAC } from '../../redux/actionCreators/cartAC';
 
 function CardToy({ toy }) {
   const dispath = useDispatch()

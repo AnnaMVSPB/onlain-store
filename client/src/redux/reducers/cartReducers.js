@@ -1,15 +1,21 @@
-import { toyAT } from '../actionTypes/toyAT';
+import { cartAT } from '../actionTypes/cartAT';
 
 const initialState = {
   cart: [],
   total: [0],
-  totalCost: [0]
+  totalCost: [0],
+  message:''
 };
 
 export const cartReducer = (state = initialState, action) => {
 
   switch (action.type) {
-    case toyAT.ADD_PURCHASE: {
+
+    case cartAT.CART_MESAGE:
+     alert(`${action.payload.message}`)
+      return {...state, message:action.payload.message}
+
+    case cartAT.ADD_PURCHASE: {
 
       let copyCart = [...state.cart]
       let newCart = []
@@ -31,7 +37,7 @@ export const cartReducer = (state = initialState, action) => {
       }
       return { ...state, cart: newCart, totalCost: [copyTotalCost],total:[copyTotal]}
     }
-    case toyAT.SUBSTITUTE_PURCHASE:{
+    case cartAT.SUBSTITUTE_PURCHASE:{
       let copyCart = [...state.cart]
       let copyTotal = [...state.total]
       let copyTotalCost=[...state.totalCost]
@@ -48,7 +54,7 @@ export const cartReducer = (state = initialState, action) => {
       copyTotal=copyCartFilter.length
       return { ...state, cart: copyCartFilter, totalCost: [copyTotalCost],total:[copyTotal] }
     }
-    case toyAT.DELETE_PURCHASE:{
+    case cartAT.DELETE_PURCHASE:{
       let copyCart = [...state.cart]
       let copyTotal = [...state.total]
       let copyTotalCost=[...state.totalCost]

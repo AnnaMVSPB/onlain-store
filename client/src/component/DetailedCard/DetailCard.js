@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { addPurchaseAC, subtractPurchaseAC } from '../../redux/actionCreators/toyAC';
+import { addPurchaseAC, subtractPurchaseAC } from '../../redux/actionCreators/cartAC';
 import RatingResult from '../Rating/RatingResult';
 import style from './DetailCard.module.css';
 

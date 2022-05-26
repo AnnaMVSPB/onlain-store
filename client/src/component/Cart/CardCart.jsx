@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addPurchaseAC, deletePurchaseAC, subtractPurchaseAC } from '../../redux/actionCreators/toyAC';
+import { addPurchaseAC, deletePurchaseAC, subtractPurchaseAC } from '../../redux/actionCreators/cartAC';
 import style from './CardCart.module.css'
 
 function CardCart({ toy }) {
