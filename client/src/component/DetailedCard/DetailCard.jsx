@@ -7,12 +7,19 @@ import style from './DetailCard.module.css';
 
 function DetailCard() {
   const { id } = useParams();
-  const { allToys, cart } = useSelector(state => state.toyReducer)
+  const { allToys } = useSelector(state => state.toyReducer)
+  const {cart} = useSelector(state => state.cartReducer)
   const dispath = useDispatch()
 
+  let amount=[]
   const toy = allToys.filter(toy => toy.id === +id)
   const path = `http://localhost:7000/${toy[0].img}`
-  const amount = cart.filter(toy => toy.id === +id)
+
+  if(cart.length){
+    amount = cart.filter(toy => toy.id === +id)
+  }
+  
+  console.log(cart)
   return (
     <>
 
