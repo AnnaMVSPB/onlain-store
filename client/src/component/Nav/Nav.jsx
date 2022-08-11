@@ -26,6 +26,9 @@ function Nav() {
             <li><Search /></li>
             {userLS?.length > 0
               ? <><li><Link to="/cart"><i className="right hide-on-med-and-down">Корзина</i></Link></li>
+                
+                
+                <li><Link to="/admin"><i className="right hide-on-med-and-down">admin</i></Link></li>
                 <li><Link to="/logout" ><i className="right hide-on-med-and-down">Выйти</i></Link></li></>
               : <><li><Link to="/login"><i className="right hide-on-med-and-down ">Войти</i></Link></li>
                 <li><Link to="/cart"><i className="right hide-on-med-and-down">Корзина</i></Link></li></>}
