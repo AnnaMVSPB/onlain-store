@@ -4,9 +4,9 @@ import {toyAT} from '../redux/actionTypes/toyAT'
 import { cartAT } from './actionTypes/cartAT';
 
 
- const HOST = 'http://localhost:7000';
+ 
  async function fetchJson(path, options = {}) {
-  const responce = await fetch(`${HOST}${path}`, {
+  const responce = await fetch(`${path}`, {
     ...options,
     credentials: 'include',
   });
