@@ -4,7 +4,7 @@
   "description": "НАХОДИТСЯ В ПРОЦЕССЕ РАЗРАБОТКИ",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd server && npm i && npx sequelize db:migrate cd ../client && npm i && npm run build",
+    "postinstall": "cd server && npm i && npx sequelize db:migrate && cd ../client && npm i && npm run build",
     "start": "cd server && npm run dev"
   },
   "repository": {
