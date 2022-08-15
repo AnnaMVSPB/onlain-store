@@ -13,18 +13,16 @@ function DetailCard() {
 
   let amount=[]
   const toy = allToys.filter(toy => toy.id === +id)
-  const path = `http://localhost:7000/${toy[0].img}`
 
   if(cart.length){
     amount = cart.filter(toy => toy.id === +id)
   }
   
-  console.log(cart)
   return (
     <>
 
       <div className={style.detailCard}>
-        <img className="materialboxed" width="650" src={path} alt="img" />
+        <img className="materialboxed" width="650" src={toy[0].img} alt="img" />
         <div className={style.bloc2}>
           <h2 className="card-title">{toy[0].name}</h2>
           {/* <RatingResult rating={toy[0].rating} /> */}

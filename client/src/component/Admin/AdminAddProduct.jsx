@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 function AdminAddProduct() {
 
   const [imgPaths, setImgPaths] = useState([]);
-  console.log(imgPaths);
 
   const sendFiles = async (e) => {
   

@@ -14,7 +14,6 @@ function Cart() {
   const checkout = () => {
     if (Object.keys(user).length) {
       const data = { cart, totalCost, user }
-      console.log(data)
       dispatch(addCartSagasAC(data))
      
     } else {
