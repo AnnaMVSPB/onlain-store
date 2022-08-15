@@ -6,10 +6,10 @@ import style from './CardCart.module.css'
 function CardCart({ toy }) {
 const dispath = useDispatch()
 
-  const path = `http://localhost:7000/${toy.img}`
+
   return (
     <div className={style.card}>
-      <div><img src={path} className="materialboxed" width="100" hide="100" alt='img' /></div>
+      <div><img src={toy.img} className="materialboxed" width="100" hide="100" alt='img' /></div>
       <div className={style.card_content}>
         <p className={style.sizeP}>{toy.name}</p>
         <div className={style.sizeP}>
