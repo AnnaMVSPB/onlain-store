@@ -3,9 +3,9 @@
 module.exports = {
   up: async (queryInterface) => {
     await queryInterface.bulkInsert('Types', [
-      {name:'Мягкие игрушки', createdAt: new Date(), updatedAt: new Date()},
-      {name:'Куклы', createdAt: new Date(), updatedAt: new Date()},
-      {name:'Машинки', createdAt: new Date(), updatedAt: new Date()},
+      {id:1,name:'Мягкие игрушки', createdAt: new Date(), updatedAt: new Date()},
+      {id:2,name:'Куклы', createdAt: new Date(), updatedAt: new Date()},
+      {id:3,name:'Машинки', createdAt: new Date(), updatedAt: new Date()},
       
     ])
   
