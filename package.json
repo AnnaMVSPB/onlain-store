@@ -1,0 +1,21 @@
+{
+  "name": "onlain-store",
+  "version": "1.0.0",
+  "description": "НАХОДИТСЯ В ПРОЦЕССЕ РАЗРАБОТКИ",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd server && npm i && npx sequelize db:migrate && cd ../client && npm i && npm run build",
+    "start":"cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaMVSPB/onlain-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnaMVSPB/onlain-store/issues"
+  },
+  "homepage": "https://github.com/AnnaMVSPB/onlain-store#readme"
+}
